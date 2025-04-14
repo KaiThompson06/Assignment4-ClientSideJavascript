@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1417325384643-aac51acc9e5d');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em 0;
+}
+header > div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 2em;
+}
+
+main {
+    padding: 2em;
+}
+footer {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 1em 0;
+    width: 100%;
+}
+section {
+    color: white;
+}
+section:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    text-align: left;
+    margin: 20px auto;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+form input[type="number"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+form input[type="number"]:focus,
+form select:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+form select {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+
+
+
+section:last-child {
+    margin-top: 20px;
+    padding: 50px;
+}
+#questionContainer > * {
+    margin: 20px 0;
+    padding: 10px 20px 20px 20px;
+    border-radius: 10px;
+}
+#questionContainer > * > h3 {
+    text-shadow: 2px 2px 4px black;
+}
+
+
+#questionContainer > * > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: auto;
+    height: auto;
+    gap: 15px;
+    padding: 10px;
+}
+
+#questionContainer > * > div > div > input {
+    display: none;
+}
+#questionContainer > * > div > div > input + label {
+    border-radius: 3px;
+    background-color: #aef0b0;
+    color: #174619;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 15px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+#questionContainer > * > div > div > input:checked + label {
+    background-color: #4CAF50;
+    color: white;
+    transform: scale(1.05);
+}
+
+.button {
+    width: 250px;
+    padding: 30px;
+    border: 2px solid #aef0b0;
+    border-radius: 30px;
+    box-shadow: 0px 0px 5px #ffffff;
+    color: #174619;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #aef0b0;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.button:hover {
+    background-color: #4CAF50;
+    color: white;
+    transform: scale(1.05);
+}
+.button:active {
+    transform: scale(0.95);
+}
+/* 
+.hidden {
+    display: none;
+} */

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Webpage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+
+</head>
+<body>
+    <header>
+        <h1>Super Awesome And Cool Trivia!</h1>
+        <div>
+            <p id="studentID" class="button">Click Here For ID!</p>   
+            <p id="randomBackground" class="button">Click Here For Another Random Background!</p> 
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2>Welcome to the Trivia Game!</h2>
+            <p>This is a simple trivia game where you can test your knowledge.</p>
+            <form action="">
+                <label for="qCount">Number of Questions</label>
+                <input type="number" id="qCount" value="10" min="1" max="25" required>
+                <label for="difficulty">Select Difficulty</label>
+                <select id="difficulty" required>
+                    <option value="random" selected>Random</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+                <label for="qType">Question Type</label>
+                <select id="qType" required>
+                    <option value="random" selected>Random</option>
+                    <option value="multiple">Multiple Choice</option>
+                    <option value="boolean">True or False</option>
+                </select>
+            </form>
+            <button id="startButton" class="button">Start Game</button>    
+        </section>
+        <section class="hidden">
+            <h2>Trivia Questions</h2>
+            <div id="questionContainer">
+                <div><h3>On what day did Germany invade Poland?</h3>
+                    <div>
+                        <div>
+                            <input type="radio" name="On what day did Germany invade Poland?" id="June 22, 1941" value="false">
+                            <label for="June 22, 1941">June 22, 1941</label>
+                        </div>
+                            <div>
+                                <input type="radio" name="On what day did Germany invade Poland?" id="December 7, 1941" value="false"> 
+                                <label for="December 7, 1941">December 7, 1941</label>
+                            </div>
+                                <div>
+                                    <input type="radio" name="On what day did Germany invade Poland?" id="July 7, 1937" value="false"> 
+                                    <label for="July 7, 1937">July 7, 1937</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="On what day did Germany invade Poland?" id="September 1, 1939" value="true"> 
+                                    <label for="September 1, 1939">September 1, 1939</label>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+            <button id="finishButton" class="button">Finish Game</button>
+
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Forever! Kai Thompson</p>
+    </footer>
+</body>
+</html>
