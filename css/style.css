@@ -1,158 +1,219 @@
+
+/* body styling */
 body {
+    /* set font, margin and padding */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    /* align text to center */
     text-align: center;
+    /* set a 2 background images, with 1 being a gradient from 40%black to 40% black to darken the image */
     background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1742766246349-16e16c7c80ab?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3Mzc1MTl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NDQ1OTg2OTd8&ixlib=rb-4.0.3&q=85');
+    /* set the basic background css styles */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
+/* header colors, add some padding on the top and bottom */
 header {
     background-color: #4CAF50;
     color: white;
     padding: 1em 0;
 }
+/* for each div that is a direct child of the header. AKA the div the holds the buttons in the header */
 header > div {
+    /* set the display to flex, so we can use flexbox to align the buttons horizonally in the header */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    /* add some padding on the sides to add some space */
     padding: 0 2em;
 }
-
+/* add some padding to the main to shift everything towards the center */
 main {
     padding: 2em;
+    /* ensure it is at least 1 screen height tall, to prevent strange footer behaviour */
+    min-height: 100vh;
 }
+/* basic footer colors and padding */
 footer {
+    /* set background color to an off white and the text color to an off black */
     background-color: #f1f1f1;
     color: #333;
+    /* add some padding on the left and right */
     padding: 1em 0;
+    /* ensure the footer is full width */
     width: 100%;
 }
+/* set text color */
 section {
     color: white;
 }
+/* the first section that holds the form */
 section:first-child {
+    /* align everything vertically */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
 }
-
+/* styling for the trivia generation form */
 form {
+    /* set bg to a semi-transparent white */
     background-color: rgba(255, 255, 255, 0.8);
+    /* give some sizr and rounded corneres */
     padding: 20px;
     border-radius: 10px;
+    /* shadow to help constrast */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    display: inline-block;
+    /* align text to left */
     text-align: left;
+    /* give a small margin top/bottom, center up and down */
     margin: 20px auto;
 }
-
+/* for each label in the form */
 form label {
     display: block;
+    /* bold, add some spacing between the labels, and give it a off black color */
     font-weight: bold;
     margin-bottom: 5px;
     color: #333;
 }
 
-form input[type="number"],
+/* for the for questions */
+form input,
 form select {
+    /* size properly */
     width: 100%;
     padding: 10px;
+    /* give some spacing between the inputs*/
     margin-bottom: 15px;
+    /* give a border and rounded corners */
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    /* include border and padding in the width/height math */
     box-sizing: border-box;
 }
-
-form input[type="number"]:focus,
+/* focus styles for the questions */
+form input:focus,
 form select:focus {
+    /* add a border color, a small shadow, and remove the outline */
     border-color: #4CAF50;
     outline: none;
     box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
 }
-
+/* for the select questions */
 form select {
-    background-color: #fff;
+    /* ensure the cursor prompt the user to interact */
     cursor: pointer;
 }
 
-
-
-
+/* the section that holds the trivia questions */
 section:last-child {
+    /* add some gap from the top, and some padding to shift stuff towards the center */
     margin-top: 20px;
     padding: 50px;
 }
+
+/* this selects every question div */
 #questionContainer > * {
+    /* add a margin on top/bottom to seperate questions */
     margin: 20px 0;
+    /* padding to give some more size, and rounded corners */
     padding: 10px 20px 20px 20px;
     border-radius: 10px;
 }
+
+/* for the header that holds each question */
 #questionContainer > * > h3 {
+    /* add a shadow to help with contrast, as the bg is random */
     text-shadow: 2px 2px 4px black;
 }
 
-
+/* for the div that holds the answers */
 #questionContainer > * > div {
+    /* set the display to grid, so we can use grid to align the answers in a grid */
     display: grid;
+    /* set the grid to 2 columns, and auto rows, so True and false will be 1 1, but multiple choice will be is a 2x2 grid*/
     grid-template-columns: 1fr 1fr;
     grid-row: auto;
-    height: auto;
-    gap: 25px 25px;
+    /* add a gap between the answers */
+    gap: 25px;
     padding: 10px;
 }
 
+/* for the actual input, hide to help with styling */
 #questionContainer > * > div > div > input {
     display: none;
 }
-#questionContainer > * > div > div > input + label {
+
+/* style the label to be a button */
+#questionContainer > * > div > div > input + label /* select all labels that are next to an input */{
+    /* rounded corners, some colors styling */
     border-radius: 3px;
     background-color: #aef0b0;
     color: #174619;
     font-size: 20px;
+    /* bold */
     font-weight: bold;
     text-align: center;
+    /* display flex to make it easy to center */
     display: flex;
     justify-content: center;
     align-items: center;
+    /* padding top/bottom, left/right is not needed*/
     padding: 25px 0px;
     cursor: pointer;
+    /* transition for the animation */
     transition: all 0.15s;
 }
 
+/* this selects any selected answer */
 #questionContainer > * > div > div > input:checked + label {
+    /* change the colors and scale it up a bit */
     background-color: #4CAF50;
     color: white;
-    transform: scale(1.05);
+    transform: scale(1.025);
 }
-
+/* button styling for the whole page */
 .button {
+    /* set sizing and add a border */
     width: 250px;
     padding: 30px;
     border: 2px solid #aef0b0;
+    /* round the corners */
     border-radius: 30px;
+    /* give a light shadow */
     box-shadow: 0px 0px 5px #ffffff;
+    /* dark green text */
     color: #174619;
+    /* bigger bold text */
     font-size: 20px;
     font-weight: bold;
+    /* center the text */
     text-align: center;
     background-color: #aef0b0;
     cursor: pointer;
+    /* transition for animations  */
     transition: all 0.15s;
 }
+/* hover and active states for the buttons */
+
+/* hover for the button */
 .button:hover {
+    /* change the colors and scale it up a bit */
     background-color: #4CAF50;
     color: white;
     transform: scale(1.05);
 }
+/* active for the button (hover still applies) */
 .button:active {
+    /* scale it down */
     transform: scale(0.95);
 }
 
+/* hidden class to hide elements */
 .hidden {
     display: none;
 }
