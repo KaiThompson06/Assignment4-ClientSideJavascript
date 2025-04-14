@@ -3,33 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Webpage</title>
+    <title>API trivia</title>
+    <!-- add css and js -->
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
-
 </head>
 <body>
+    <!-- header -->
     <header>
+        <!-- name of the website -->
         <h1>Super Awesome And Cool Trivia!</h1>
+        <!-- div of buttons for some functionality -->
         <div>
-            <p id="studentID" class="button">Click Here For ID!</p>   
+            <!-- button to dynamically show ID -->
+            <p id="studentID" class="button">Click Here For ID!</p>
+            <!-- button to show a random background -->   
             <p id="randomBackground" class="button">Click Here For Another Random Background!</p> 
         </div>
     </header>
+    <!-- main will hold most of the content -->
     <main>
+        <!-- this first section is for the welcome message and the form to generate the random trivia questions -->
         <section>
+
             <h2>Welcome to the Trivia Game!</h2>
-            <p>This is a simple trivia game where you can test your knowledge.</p>
+            <!-- using a form is not quite nessessary, as it doesnt need the actions. but it is still useful for making forms -->
             <form action="">
+                <!-- ask for how many questions and default to 10 -->
                 <label for="qCount">Number of Questions</label>
                 <input type="number" id="qCount" value="10" min="1" max="25" required>
+                <!-- ask for the difficulty and default to random -->
                 <label for="difficulty">Select Difficulty</label>
+                <!-- use a select menu to only get a few values -->
                 <select id="difficulty" required>
                     <option value="random" selected>Random</option>
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
                     <option value="hard">Hard</option>
                 </select>
+
+                <!-- ask for type of question, default to random per question -->
                 <label for="qType">Question Type</label>
                 <select id="qType" required>
                     <option value="random" selected>Random</option>
@@ -37,38 +50,23 @@
                     <option value="boolean">True or False</option>
                 </select>
             </form>
+            <!-- button to generate the start of the game -->
             <button id="startButton" class="button">Start Game</button>    
         </section>
+        <!-- this section is hidden by default, and is to hold the actual game when the js generates it -->
         <section class="hidden">
+            <!-- simple header -->
             <h2>Trivia Questions</h2>
+            <!-- div to hold the questions -->
             <div id="questionContainer">
-                <div><h3>On what day did Germany invade Poland?</h3>
-                    <div>
-                        <div>
-                            <input type="radio" name="On what day did Germany invade Poland?" id="June 22, 1941" value="false">
-                            <label for="June 22, 1941">June 22, 1941</label>
-                        </div>
-                            <div>
-                                <input type="radio" name="On what day did Germany invade Poland?" id="December 7, 1941" value="false"> 
-                                <label for="December 7, 1941">December 7, 1941</label>
-                            </div>
-                                <div>
-                                    <input type="radio" name="On what day did Germany invade Poland?" id="July 7, 1937" value="false"> 
-                                    <label for="July 7, 1937">July 7, 1937</label>
-                                </div>
-                                <div>
-                                    <input type="radio" name="On what day did Germany invade Poland?" id="September 1, 1939" value="true"> 
-                                    <label for="September 1, 1939">September 1, 1939</label>
-                                </div>
-                            </div>
-                        </div>
             </div>
+            <!-- button to finish the game -->
             <button id="finishButton" class="button">Finish Game</button>
-
         </section>
     </main>
+    <!-- footer to hold the credit for the background images -->
     <footer>
-        <p>&copy; Forever! Kai Thompson</p>
+        <p>Image by <a href="https://unsplash.com/@by_danny_g" target="_blank">Danny Greenberg</a> on Unsplash</p>
     </footer>
 </body>
 </html>
