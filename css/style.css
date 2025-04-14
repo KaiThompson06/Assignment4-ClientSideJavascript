@@ -37,6 +37,7 @@ section:first-child {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
 form {
@@ -151,7 +152,7 @@ section:last-child {
 .button:active {
     transform: scale(0.95);
 }
-/* 
+
 .hidden {
     display: none;
-} */
+}

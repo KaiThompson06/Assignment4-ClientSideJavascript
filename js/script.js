@@ -34,24 +34,20 @@ function randomBackground() {
     // get a random background image with the help of the Unsplash API
     let UnsplashURL = "https://api.unsplash.com/photos/random?orientation=portrait&client_id=";
 
-    // get the API key from the access key php file
-    fetch("access_key.php")
-    .then(response => response.text())
+
+    data = "FPgNpfIEf78_OCkdFwpFHtgugbtwewi7CbjnQ6uyYho";
+    // set the background image to the html element
+    UnsplashURL += data;
+
+    // then fetch an image from the Unsplash API
+    fetch(UnsplashURL)
+    .then(response => response.json())
     .then(data => {
         // set the background image to the html element
-        UnsplashURL += data;
-
-        // then fetch an image from the Unsplash API
-        fetch(UnsplashURL)
-        .then(response => response.json())
-        .then(data => {
-            // set the background image to the html element
-            body.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${data.urls.full})`;
-        
-            // set the footer to credit the image to the author
-            footer.innerHTML = `<p>Image by <a href="${data.user.links.html}" target="_blank">${data.user.name}</a> on Unsplash</p>`;
-        
-        });
+        body.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${data.urls.full})`;
+    
+        // set the footer to credit the image to the author
+        footer.innerHTML = `<p>Image by <a href="${data.user.links.html}" target="_blank">${data.user.name}</a> on Unsplash</p>`;
 
     });
 };
